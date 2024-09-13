@@ -51,7 +51,6 @@ If you use this work in your research, please cite our paper:
 @article{panboonyuen2024REG,
   title={REG: Refined Generalized Focal Loss for Road Asset Detection on Thai Highways Using Vision-Based Detection and Segmentation Models},
   author={Teerapong Panboonyuen},
-  journal={Journal of Computer Vision},
   year={2024},
   url={https://github.com/kaopanboonyuen/REG}
 }
