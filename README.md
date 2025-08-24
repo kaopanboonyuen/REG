@@ -154,6 +154,4 @@ MIT License — free to use, share, and modify.
 
 > “If it moves on the road, REG sees it.”
 
-```
-
 ---
