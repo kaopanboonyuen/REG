@@ -1,7 +1,5 @@
 # REG: Refined Generalized Focal Loss for Road Asset Detection on Thai Highways
 
-<!-- ![REG Logo](https://img.icons8.com/ios/50/000000/road.png)  -->
-
 Welcome to the official repository for our research on **Refined Generalized Focal Loss (REG)** for road asset detection and segmentation on Thai highways. This novel framework leverages advanced mathematical formulations to enhance the detection and segmentation of critical road elements using state-of-the-art vision-based models.
 
 ## 📚 Overview
@@ -48,11 +46,13 @@ Detailed usage instructions and example code can be found in the `docs` director
 If you use this work in your research, please cite our paper:
 
 ```bibtex
-@article{panboonyuen2024REG,
-  title={REG: Refined Generalized Focal Loss for Road Asset Detection on Thai Highways Using Vision-Based Detection and Segmentation Models},
-  author={Teerapong Panboonyuen},
-  year={2024},
-  url={https://github.com/kaopanboonyuen/REG}
+@inproceedings{panboonyuen2025reg,
+  title={Reg: Refined Generalized Focal Loss for Road Asset Detection on Thai Highways Using Vision Models},
+  author={Panboonyuen, Teerapong},
+  booktitle={2025 17th International Conference on Knowledge and Smart Technology (KST)},
+  pages={324--329},
+  year={2025},
+  organization={IEEE}
 }
 ```
 
@@ -62,7 +62,7 @@ For further inquiries, reach out to:
 
 - **Teerapong Panboonyuen**  
   Postdoctoral Researcher, Chulalongkorn University  
-  Senior Research Scientist, MARS (Motor AI Recognition Solution)  
+  Senior Research Scientist, MARSAIL (Motor AI Recognition Solution Artificial Intelligence Laboratory)  
   Email: [teerapong.panboonyuen@gmail.com](mailto:teerapong.panboonyuen@gmail.com)
 
 ---
