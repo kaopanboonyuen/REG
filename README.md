@@ -2,7 +2,7 @@
 
 > Official implementation of our paper:  
 > **“REG: Refined Generalized Focal Loss for Road Asset Detection on Thai Highways Using Vision-Based Detection and Segmentation Models”**  
-> 📌 Presented at **IEEE KST 2025** | 🔬 Designed by **Teerapong Panboonyuen (Kao)**
+> 📌 Presented at **IEEE KST 2025** | 🔬 Developed by **Teerapong Panboonyuen (Kao)**
 
 ---
 
