@@ -109,6 +109,9 @@ REG outperforms traditional focal loss and other baselines in both segmentation 
 📄 Paper (arXiv):
 [🔗 REG Paper on arXiv](https://arxiv.org/abs/2409.09877)
 
+📄 Paper (IEEE):
+[🔗 REG Paper on IEEE](https://ieeexplore.ieee.org/document/11003314/)
+
 ---
 
 ## 📄 Citation
