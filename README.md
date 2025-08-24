@@ -1,35 +1,41 @@
-# REG: Refined Generalized Focal Loss for Road Asset Detection on Thai Highways
+# 🚧 REG: Refined Generalized Focal Loss for Road Asset Detection on Thai Highways
 
-Welcome to the official repository for our research on **Refined Generalized Focal Loss (REG)** for road asset detection and segmentation on Thai highways. This novel framework leverages advanced mathematical formulations to enhance the detection and segmentation of critical road elements using state-of-the-art vision-based models.
+> Official implementation of our paper:  
+> **“REG: Refined Generalized Focal Loss for Road Asset Detection on Thai Highways Using Vision-Based Detection and Segmentation Models”**  
+> 📌 Presented at **IEEE KST 2025** | 🔬 Designed by **Teerapong Panboonyuen (Kao)**
 
-## 📚 Overview
+---
 
-This paper introduces an advanced REG formulation designed to tackle class imbalance and localization challenges in road asset detection. The REG model integrates into vision-based detection and segmentation frameworks to improve accuracy and robustness, especially in complex environments with varying lighting conditions and cluttered backgrounds.
+## 🌟 Highlights
 
-**Key Contributions:**
-- **Refined Generalized Focal Loss (REG):** A sophisticated loss function that dynamically adjusts for class imbalance and incorporates spatial-contextual adjustments.
-- **Multi-Task Learning:** Enhances both detection and segmentation accuracy by optimizing REG across multiple tasks.
-- **Performance Metrics:** Achieved a mAP50 of 80.34 and an F1-score of 77.87, demonstrating significant improvements over conventional methods.
+- ✅ **REG Loss**: Combines focal loss, spatial refinement, and probabilistic uncertainty.
+- 🎯 **Multi-task Model**: Supports object detection & segmentation in one architecture.
+- 📊 **Performance**: Achieves `mAP50 = 80.34`, `F1-score = 77.87` on real-world Thai highway data.
+- 🧱 **Modular PyTorch Codebase**: Easy to adapt for new datasets or vision tasks.
+- 📦 **Dockerized Deployment**: Reproducible, scalable, CV-ready.
 
-For a detailed explanation of the mathematical model and background, please check out our previous work at [Refined Generalized Focal Loss Explained](https://kaopanboonyuen.github.io/blog/2024-09-07-refined-generalized-focal-loss-for-road-asset-detection-on-thai-highways-using-vision-models/).
+---
 
-## 🔬 Key Features
+## 🗂 Project Structure
 
-- **Class Imbalance Handling:** Advanced adjustments for rare and challenging classes.
-- **Spatial-Contextual Adjustments:** Incorporates spatial distribution for better asset localization.
-- **Probabilistic Refinement:** Captures prediction uncertainty to enhance model robustness.
+```bash
+REG/
+├── src/
+│   ├── model.py         # REG Loss + Multi-task Detection-Segmentation Model
+│   ├── train.py         # Training Pipeline
+│   ├── inference.py     # Inference Script for Images
+│   ├── metrics.py       # Evaluation Metrics (mAP, F1, etc.)
+│   └── utils.py         # Utility Functions & Argument Parsers
+├── Dockerfile           # Docker Environment for Reproducibility
+├── requirements.txt     # Python Dependencies
+└── README.md            # Project Documentation (this file)
+````
 
-## 📈 Results
+---
 
-Our rigorous experiments demonstrate the effectiveness of REG in improving road asset detection and segmentation accuracy. The model's performance outperforms conventional methods, making it a robust solution for real-world applications.
+## 🚀 Getting Started
 
-**Results Summary:**
-- **mAP50:** 80.34
-- **F1-Score:** 77.87
-
-## 📥 Installation
-
-To get started, clone the repository and install the required dependencies:
+### 🔧 1. Installation
 
 ```bash
 git clone https://github.com/kaopanboonyuen/REG.git
@@ -37,17 +43,81 @@ cd REG
 pip install -r requirements.txt
 ```
 
-## 🚀 Usage
+Or via Docker (recommended):
 
-Detailed usage instructions and example code can be found in the `docs` directory. For questions or contributions, please refer to the [contributing guidelines](CONTRIBUTING.md).
+```bash
+docker build -t reg-road-assets .
+```
+
+---
+
+### 📊 2. Training
+
+Train REG on your dataset (edit `--data-path` and config as needed):
+
+```bash
+python src/train.py \
+  --data-path ./data/ \
+  --batch 8 \
+  --epochs 50 \
+  --lr 1e-4
+```
+
+---
+
+### 🖼 3. Inference on Image
+
+Run inference on a single image using a trained model checkpoint:
+
+```bash
+python src/inference.py \
+  --checkpoint ./checkpoints/best_model.pth \
+  --image-path ./images/test.jpg \
+  --output-path ./output/result.png
+```
+
+---
+
+### 📏 4. Evaluation
+
+Evaluate detection and segmentation metrics:
+
+```bash
+python src/metrics.py \
+  --pred-dir ./predictions/ \
+  --gt-dir ./ground_truth/
+```
+
+---
+
+## 📈 Results Summary
+
+| Metric   | Value     |
+| -------- | --------- |
+| mAP\@50  | **80.34** |
+| F1-Score | **77.87** |
+
+REG outperforms traditional focal loss and other baselines in both segmentation and detection under challenging road conditions including glare, occlusion, and rare asset classes.
+
+---
+
+## 📚 Learn More
+
+📖 Blog post:
+[🔗 Refined Generalized Focal Loss Explained](https://kaopanboonyuen.github.io/blog/2024-09-07-refined-generalized-focal-loss-for-road-asset-detection-on-thai-highways-using-vision-models/)
+
+📄 Paper (arXiv):
+[🔗 REG Paper on arXiv](https://arxiv.org/abs/2409.09877)
+
+---
 
 ## 📄 Citation
 
-If you use this work in your research, please cite our paper:
+If you use this repo in your research or projects, please cite:
 
 ```bibtex
 @inproceedings{panboonyuen2025reg,
-  title={Reg: Refined Generalized Focal Loss for Road Asset Detection on Thai Highways Using Vision Models},
+  title={REG: Refined Generalized Focal Loss for Road Asset Detection on Thai Highways Using Vision Models},
   author={Panboonyuen, Teerapong},
   booktitle={2025 17th International Conference on Knowledge and Smart Technology (KST)},
   pages={324--329},
@@ -56,15 +126,31 @@ If you use this work in your research, please cite our paper:
 }
 ```
 
-## 📫 Contact
+---
 
-For further inquiries, reach out to:
+## 👨‍💻 Contact
 
-- **Teerapong Panboonyuen**  
-  Postdoctoral Researcher, Chulalongkorn University  
-  Senior Research Scientist, MARSAIL (Motor AI Recognition Solution Artificial Intelligence Laboratory)  
-  Email: [teerapong.panboonyuen@gmail.com](mailto:teerapong.panboonyuen@gmail.com)
+**Teerapong Panboonyuen (Kao)**
+Postdoctoral Researcher, Chulalongkorn University
+Senior Research Scientist, MARSAIL
+📧 [teerapong.panboonyuen@gmail.com](mailto:teerapong.panboonyuen@gmail.com)
 
 ---
 
-Thank you for visiting our repository! We hope you find our work useful in advancing road asset detection and segmentation.
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## 🧠 License
+
+MIT License — free to use, share, and modify.
+
+---
+
+> “If it moves on the road, REG sees it.”
+
+```
+
+---
